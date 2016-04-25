@@ -2,14 +2,11 @@
 (* insert : int list -> int n -> int list *)
 let rec insert list n = match list with
 	| [] -> [n]
-	| first :: second :: rest ->
-			if n < first then
-				n :: first :: second :: rest
-			else if first < n && second > n then
-				first :: n :: second :: rest
+	| head :: rest ->
+			if n < head then
+				n :: head :: rest
 			else
-				first :: (insert (second :: rest) n)
-	| head :: [] -> [head; n]
+				head :: (insert rest) n
 (* テスト *)
 let test1 = insert [1;2;5] 3 = [1;2;3;5]
 let test2 = insert [1;2;5] 6 = [1;2;5;6]
