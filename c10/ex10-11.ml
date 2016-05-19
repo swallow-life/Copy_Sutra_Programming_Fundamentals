@@ -1,8 +1,10 @@
 (* 駅をふたつ指定するとその駅間の距離を返す *)
 (* get_ekikan_kyori : ekikan_t list -> string -> string -> float *)
+(* #use "c9/metro.ml" *)
+
 let rec get_ekikan_kyori lst eki1 eki2 = match lst with
 	| [] -> infinity
-	| { kiten=ki; shuten=shu; keiyu=ke; kyori=kyo; jikan=ji} :: rest ->
+	| {kiten=ki; shuten=shu; keiyu=ke; kyori=kyo; jikan=ji} :: rest ->
 		if (eki1 = ki && eki2 = shu) || (eki2 = ki && eki1 = shu) then
 			kyo
 		else

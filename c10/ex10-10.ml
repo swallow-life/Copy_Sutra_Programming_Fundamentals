@@ -1,6 +1,6 @@
 (* 駅名リストからローマ字の駅名に対応する漢字の駅名を取得する *)
 (* romaji_to_kanji : string -> string list *)
-#use  "c9/metro.ml"
+(* #use  "c9/metro.ml" *)
 let rec romaji_to_kanji romaji lst = match lst with
 	| [] -> ""
 	| { kanji = knj; kana = kna; romaji = roma; shozoku = szk } :: rest ->
