@@ -2,7 +2,7 @@
 つながっていたら最短距離と手前リストを更新したもの
 つながっていなかったらもとのまま返す *)
 (* koushin1 : eki_t -> eki_t -> eki_t *)
-(* #use "c8/metro.ml"
+(* #use "c9/metro.ml"
 #use "c10/ex10-11.ml"
 #use "c12/ex12-1.ml" *)
 

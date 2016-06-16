@@ -1,6 +1,6 @@
 (* ダイクストラのアルゴリズムの始点の初期化を実行する *)
 (* shokika : eki_t list -> string -> eki_t list *)
-let rec shokika ekimai_list kanji_shiten = match ekimai_list with
+let rec shokika ekimei_list kanji_shiten = match ekimei_list with
 	| [] -> []
 	| { namae = n; saitan_kyori = s; temae_list} as first :: rest ->
 			if n = kanji_shiten then
