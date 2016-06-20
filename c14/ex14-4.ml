@@ -5,7 +5,7 @@ type gakusei_t = {
   seiseki : string;     (* 成績 *)
 }
 (* gakusei_sum : gakusei_t list -> int *)
-let gakusei_sum gakusei_lst = List.fold_right (fun acc x -> acc + x) (List.map (fun x -> x.tensuu) gakusei_lst) 0
+let gakusei_sum gakusei_lst = List.fold_right (fun x acc -> acc + x) (List.map (fun x -> x.tensuu) gakusei_lst) 0
 
 (* テスト *)
 (* gakusei_t list 型のデータの例 *)
