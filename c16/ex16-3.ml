@@ -1,10 +1,11 @@
 let koushin p v lst =
-	List.map (fun { namae=n; saitan_kyori=s; temae_list=t } ->
-		let kyori = get_ekikan_kyori lst n p.namae in
+	List.map (fun q -> match q with
+		| { namae=n; saitan_kyori=s; temae_list=t } ->
+		let kyori = get_ekikan_kyori lst p.namae n in
 		if kyori = infinity then
-			p
-		else if kyori +. s < p.saitan_kyori then
-			{ namae=p.namae; saitan_kyori=kyori +. s; temae_list=p.namae :: t }
+			q
+		else if kyori +. p.saitan_kyori < s then
+			{ namae=n; saitan_kyori=kyori +. p.saitan_kyori; temae_list=n :: p.temae_list }
 		else
-			p
+			q
 	) v
