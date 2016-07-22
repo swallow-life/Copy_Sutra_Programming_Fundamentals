@@ -2,9 +2,9 @@
 リストの中の駅間をすべて挿入した木を返す *)
 #use "c17/ex17-12.ml"
 (* inserts_ekikan : ekikan_tree_t -> ekikan_t list -> ekikan_tree_t *)
-let rec inserts_ekikan ekikan_tree ekikan_list = match ekikan_list with
-	| [] -> ekikan_tree
-	| first :: rest -> insert_ekikan (inserts_ekikan ekikan_tree rest) first
+let rec inserts_ekikan ekikan_tree ekikan_list =
+(* 	List.fold_right (fun ekikan tree -> insert_ekikan tree ekikan) ekikan_list ekikan_tree *)
+	List.fold_left insert_ekikan ekikan_tree ekikan_list
 
 (* テスト *)
 let ekikan_lst1 = [ {kiten = "新大塚"; shuten = "茗荷谷"; keiyu = "丸ノ内線"; kyori = 1.2; jikan = 2} ]
