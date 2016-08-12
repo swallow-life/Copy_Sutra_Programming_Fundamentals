@@ -1,8 +1,6 @@
 (* 漢字の駅名を二つとekikan_tree_t型を受けとって、その2駅間の距離を返す *)
 (* get_ekikan_kyori : string -> string -> ekikan_tree_t -> float *)
 #use "c9/metro.ml"
-#use "c18/ex18-3.ml"
-#use "c17/ex17-10.ml"
 #use "c17/ex17-13.ml"
 let rec get_ekikan_kyori first_ekimei second_ekimei tree = match tree with
 	| Empty -> raise Not_found
